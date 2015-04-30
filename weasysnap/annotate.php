@@ -17,5 +17,4 @@ $outputImage->setFormat('png');
 $outputImage->writeimage('meme2.png');
 
 
-
 ?>
