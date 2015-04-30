@@ -1,10 +1,13 @@
-<?php // script_2.php
+<?php
+
+// convert flower.jpg -rotate 45 flower_rotate45.jpg
 
 $resource = NewMagickWand();
-MagickReadImage( $resource, ‘image_1.jpg’ );
+MagickReadImage( $resource, 'small_flower.jpg' );
 
-$width = MagickGetImageWidth( $resource );
-$height = MagickGetImageHeight( $resource );
-echo “Image size, in pixels, is:  width $width x height $height”;
+MagickRotateImage( $resource, null, 45 );
+
+header( 'Content-Type: image/gif' );
+MagickEchoImageBlob( $resource );
 
 ?>
