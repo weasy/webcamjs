@@ -1,8 +1,10 @@
-<?php
+<?php // script_2.php
+
 $resource = NewMagickWand();
 MagickReadImage( $resource, ‘image_1.jpg’ );
 
-header( ‘Content-Type: image/jpeg’ );
-MagickEchoImageBlob( $resource );
+$width = MagickGetImageWidth( $resource );
+$height = MagickGetImageHeight( $resource );
+echo “Image size, in pixels, is:  width $width x height $height”;
 
 ?>
