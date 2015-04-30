@@ -1,20 +1,27 @@
+
 <?php
-$magick_wand=NewMagickWand();
-MagickReadImage($magick_wand,'rose.jpg');
-$drawing_wand=NewDrawingWand();
-DrawSetFont($drawing_wand,"/usr/share/fonts/msttcorefonts/impact.ttf");
-DrawSetFontSize($drawing_wand,20);
-DrawSetGravity($drawing_wand,MW_CenterGravity);
-$pixel_wand=NewPixelWand();
-PixelSetColor($pixel_wand,"white");
-DrawSetFillColor($drawing_wand,$pixel_wand);
-if (MagickAnnotateImage($magick_wand,$drawing_wand,0,0,0,"Rose") != 0)
+
+// convert flower.jpg -font courier -fill white -pointsize 20 -annotate +50+50 Flower flower_annotate1.jpg
+
+$resource = NewMagickWand();
+$dwand = NewDrawingWand();
+$pwand = NewPixelWand();
+
+PixelSetColor($pwand, "white");
+DrawSetFont($dwand, "/usr/share/fonts/default/TrueType/cour.ttf");
+DrawSetFontSize($dwand, 20);
+DrawSetFillColor($dwand, $pwand);
+
+MagickReadImage( $resource, 'small_flower.jpg' );
+
+if( MagickAnnotateImage( $resource, $dwand, 0, 0, 0, "Flower" ) )
 {
-	MagickEchoImageBlob( $magick_wand );
+  header( 'Content-Type: image/gif' );
+  MagickEchoImageBlob( $resource );
 }
 else
 {
-	echo MagickGetExceptionString($magick_wand);
+  echo MagickGetExceptionString($resource);
 }
 
 ?>
