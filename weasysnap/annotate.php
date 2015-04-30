@@ -2,7 +2,7 @@
   $magick_wand=NewMagickWand();
   MagickReadImage($magick_wand,'rose.jpg');
   $drawing_wand=NewDrawingWand();
-  DrawSetFont($drawing_wand,"/usr/share/fonts/bitstream-vera/Vera.ttf");
+  DrawSetFont($drawing_wand,"/usr/share/fonts/msttcorefonts/cour.ttf");
   DrawSetFontSize($drawing_wand,20);
   DrawSetGravity($drawing_wand,MW_CenterGravity);
   $pixel_wand=NewPixelWand();
