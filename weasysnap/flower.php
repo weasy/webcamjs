@@ -8,7 +8,7 @@ $dwand = NewDrawingWand();
 $pwand = NewPixelWand();
 
 PixelSetColor($pwand, "white");
-DrawSetFont($dwand, "/usr/share/fonts/default/TrueType/cour.ttf");
+DrawSetFont($dwand, "/usr/share/fonts/msttcorefonts/cour.ttf");
 DrawSetFontSize($dwand, 20);
 DrawSetFillColor($dwand, $pwand);
 
