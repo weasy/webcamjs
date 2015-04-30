@@ -16,4 +16,5 @@ else
 {
 	echo MagickGetExceptionString($magick_wand);
 }
+
 ?>
