@@ -1,13 +1,27 @@
+
 <?php
 
-// convert flower.jpg -rotate 45 flower_rotate45.jpg
+// convert flower.jpg -font courier -fill white -pointsize 20 -annotate +50+50 Flower flower_annotate1.jpg
 
 $resource = NewMagickWand();
+$dwand = NewDrawingWand();
+$pwand = NewPixelWand();
+
+PixelSetColor($pwand, "black");
+DrawSetFont($dwand, "/usr/share/fonts/msttcorefonts/verdana.ttf");
+DrawSetFontSize($dwand, 20);
+DrawSetFillColor($dwand, $pwand);
+
 MagickReadImage( $resource, 'small_flower.jpg' );
 
-MagickRotateImage( $resource, null, -45 );
-
-header( 'Content-Type: image/gif' );
-MagickEchoImageBlob( $resource );
+if( MagickAnnotateImage( $resource, $dwand, 0, 0, 0, "Text" ) )
+{
+  header( 'Content-Type: image/gif' );
+  MagickEchoImageBlob( $resource );
+}
+else
+{
+  echo MagickGetExceptionString($resource);
+}
 
 ?>
