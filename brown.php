@@ -20,7 +20,7 @@ $image->annotateImage($draw, 10, 45, 0, 'The quick brown fox jumps over the lazy
 /* Give image a format */
 $image->setImageFormat('png');
 
-/* Output the image with headers */
+/* Output the image with headers. */
 header('Content-type: image/png');
 echo $image;
 
