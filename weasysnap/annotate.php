@@ -1,15 +1,23 @@
+<?php 
+$imagepath = 'rose.jpg';
 
-<?php
-   $picin = new Imagick(rose.jpg);
-   $picin->scaleimage(800,0);
-   $height = $picin->getimageheight();
+function annotateImage($imagePath, $strokeColor, $fillColor) {
+	$imagick = new \Imagick(realpath($imagePath));
 
-   $draw = new ImagickDraw();
-   $draw->setFillColor('#ffff00');
-   $draw->setFont('Verdana-Regular');
-   $draw->setFontSize(21);
-   $draw->setTextUnderColor('#ff000088');
-   $picin->annotateImage($draw,40,$height-10,0,"Hallo");
+	$draw = new \ImagickDraw();
+	$draw->setStrokeColor($strokeColor);
+	$draw->setFillColor($fillColor);
 
-   $picin->writeimage($pic6);
+	$draw->setStrokeWidth(1);
+	$draw->setFontSize(36);
+	 
+	$text = "TESTING";
+
+	$draw->setFont("/usr/share/fonts/msttcorefonts/verdanai.ttf");
+	$imagick->annotateimage($draw, 40, 40, 0, $text);
+
+	header("Content-Type: image/jpg");
+	echo $imagick->getImageBlob();
+}
+
 ?>
