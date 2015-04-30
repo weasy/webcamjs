@@ -1,21 +1,27 @@
-<?php 
-$draw = new ImagickDraw();
-$outputImage = new Imagick('meme.jpg');
 
-$draw->setFillColor('#fff');
-$draw->setFont('impact.ttf');
-$draw->setFontSize(40);
-$draw->setGravity(\Imagick::GRAVITY_NORTH);
-$draw->setStrokeColor('#000');
-$draw->setStrokeWidth(1);
-$draw->setStrokeAntialias(true);
-$draw->setTextAntialias(true);
+<?php
 
-$outputImage->annotateImage($draw, 0, 5, 0, 'Sample text');
+// convert flower.jpg -font courier -fill white -pointsize 20 -annotate +50+50 Flower flower_annotate1.jpg
 
-$outputImage->setFormat('png');
-$outputImage->writeimage('meme2.png');
+$resource = NewMagickWand();
+$dwand = NewDrawingWand();
+$pwand = NewPixelWand();
 
-$outputImage
+PixelSetColor($pwand, "white");
+DrawSetFont($dwand, "/usr/share/fonts/default/TrueType/cour.ttf");
+DrawSetFontSize($dwand, 20);
+DrawSetFillColor($dwand, $pwand);
+
+MagickReadImage( $resource, 'small_flower.jpg' );
+
+if( MagickAnnotateImage( $resource, $dwand, 0, 0, 0, "Flower" ) )
+{
+  header( 'Content-Type: image/gif' );
+  MagickEchoImageBlob( $resource );
+}
+else
+{
+  echo MagickGetExceptionString($resource);
+}
 
 ?>
