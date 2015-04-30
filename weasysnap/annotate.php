@@ -5,7 +5,7 @@
 $resource = NewMagickWand();
 MagickReadImage( $resource, 'small_flower.jpg' );
 
-MagickRotateImage( $resource, null, 45 );
+MagickRotateImage( $resource, null, -45 );
 
 header( 'Content-Type: image/gif' );
 MagickEchoImageBlob( $resource );
