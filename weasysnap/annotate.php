@@ -6,7 +6,7 @@
 
    $draw = new ImagickDraw();
    $draw->setFillColor('#ffff00');
-   $draw->setFont('Eurostile');
+   $draw->setFont('Verdana-Regular');
    $draw->setFontSize(21);
    $draw->setTextUnderColor('#ff000088');
    $picin->annotateImage($draw,40,$height-10,0,"Hallo");
