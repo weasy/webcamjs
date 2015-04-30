@@ -16,5 +16,6 @@ $outputImage->annotateImage($draw, 0, 5, 0, 'Sample text');
 $outputImage->setFormat('png');
 $outputImage->writeimage('meme2.png');
 
+$outputImage
 
 ?>
