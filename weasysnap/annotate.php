@@ -1,19 +1,15 @@
+
 <?php
-  $magick_wand=NewMagickWand();
-  MagickReadImage($magick_wand,'rose.jpg');
-  $drawing_wand=NewDrawingWand();
-  DrawSetFont($drawing_wand,"/usr/share/fonts/msttcorefonts/cour.ttf");
-  DrawSetFontSize($drawing_wand,20);
-  DrawSetGravity($drawing_wand,MW_CenterGravity);
-  $pixel_wand=NewPixelWand();
-  PixelSetColor($pixel_wand,"white");
-  DrawSetFillColor($drawing_wand,$pixel_wand);
-  if (MagickAnnotateImage($magick_wand,$drawing_wand,0,0,0,"Rose") != 0)
-    {
-      MagickEchoImageBlob( $magick_wand );
-    }
-  else
-    {
-      echo MagickGetExceptionString($magick_wand);
-    }
+   $picin = new Imagick(rose.jpg);
+   $picin->scaleimage(800,0);
+   $height = $picin->getimageheight();
+
+   $draw = new ImagickDraw();
+   $draw->setFillColor('#ffff00');
+   $draw->setFont('Eurostile');
+   $draw->setFontSize(21);
+   $draw->setTextUnderColor('#ff000088');
+   $picin->annotateImage($draw,40,$height-10,0,"Hallo");
+
+   $picin->writeimage($pic6);
 ?>
