@@ -25,7 +25,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 
 //annotateImage("rose.jpg", black, white)
 
-if $_POST["meme"] {
+if ($_POST["meme"]) {
 	annotateImage("rose.jpg", black, white)
 	
 }
