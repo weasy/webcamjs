@@ -1,6 +1,3 @@
-
-
-
 <?php 
 
 function annotateImage($imagePath, $strokeColor, $fillColor) {
@@ -28,8 +25,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 if ($_POST["meme"]) {
 	annotateImage("rose.jpg", black, white);
 	
-}
-
+} else {
 ?>
 
 <html>
@@ -41,3 +37,6 @@ Name: <input type="text" name="meme"><br>
 </form>
 </body>
 </html>
+<?php
+} 
+?>
