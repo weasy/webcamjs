@@ -13,8 +13,8 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$text = "today's quote";
 
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
-	$imagick->setgravity(8);
-	$imagick->annotateimage($draw, 40, 0, 0, $text);
+	$draw->setgravity(imagick::GRAVITY_SOUTH);
+	$imagick->annotateimage($draw, 0, 0, 0, $text);
 
 	header("Content-Type: image/jpg");
 	echo $imagick->getImageBlob();
