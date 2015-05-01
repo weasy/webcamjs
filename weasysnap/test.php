@@ -1,10 +1,4 @@
-<html>
-<body>
 
-<form action="test.php" method="post">
-Name: <input type="text" name="meme"><br>
-<input type="submit">
-</form>
 
 
 <?php 
@@ -19,7 +13,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$draw->setStrokeWidth(1);
 	$draw->setFontSize(36);
 	 
-	$text = $_POST["name"];
+	$text = $_POST["meme"];
 
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
 	$draw->setgravity(imagick::GRAVITY_SOUTH);
@@ -29,8 +23,21 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	echo $imagick->getImageBlob();
 }
 
-annotateImage("rose.jpg", black, white)
+//annotateImage("rose.jpg", black, white)
+
+if $_POST["meme"] {
+	annotateImage("rose.jpg", black, white)
+	
+}
 
 ?>
+
+<html>
+<body>
+
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+Name: <input type="text" name="meme"><br>
+<input type="submit">
+</form>
 </body>
-</html> 
+</html>
