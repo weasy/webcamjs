@@ -13,7 +13,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$text = "TESTING";
 
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
-	$imagick->annotateimage($draw, 0, 0, 0, $text);
+	$imagick->annotateimage($draw, 0, 40, 0, $text);
 
 	header("Content-Type: image/jpg");
 	echo $imagick->getImageBlob();
