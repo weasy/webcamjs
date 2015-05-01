@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<form action="annotate.php" method="post">
+<form action="test.php" method="post">
 Name: <input type="text" name="meme"><br>
 <input type="submit">
 </form>
@@ -19,7 +19,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$draw->setStrokeWidth(1);
 	$draw->setFontSize(36);
 	 
-	$text = "This is my test";
+	$text = $_POST["name"];
 
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
 	$draw->setgravity(imagick::GRAVITY_SOUTH);
