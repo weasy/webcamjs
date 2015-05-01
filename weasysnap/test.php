@@ -19,7 +19,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$draw->setStrokeWidth(1);
 	$draw->setFontSize(36);
 	 
-	$text = $_POST["name"];
+	$text = "This is my test";
 
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
 	$draw->setgravity(imagick::GRAVITY_SOUTH);
