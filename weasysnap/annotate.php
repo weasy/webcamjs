@@ -1,5 +1,4 @@
 <?php 
-$imagepath = 'rose.jpg';
 
 function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick = new \Imagick(realpath($imagePath));
@@ -19,5 +18,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	header("Content-Type: image/jpg");
 	echo $imagick->getImageBlob();
 }
+
+annotateImage("rose.jpg", black, white)
 
 ?>
