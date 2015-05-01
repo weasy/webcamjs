@@ -12,8 +12,8 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	 
 	$text = "TESTING";
 
-	$draw->setFont("/usr/share/fonts/msttcorefonts/verdanai.ttf");
-	$imagick->annotateimage($draw, 40, 40, 0, $text);
+	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
+	$imagick->annotateimage($draw, 0, 0, 0, $text);
 
 	header("Content-Type: image/jpg");
 	echo $imagick->getImageBlob();
