@@ -36,9 +36,9 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 
 //annotateImage("rose.jpg", black, white)  // old way of calling line.
 
- $webcam = $_FILES['webcam']['tmp_name'];
-if ($_POST["selfxpress"]) {
-	annotateImage(tmp_name, black, white);
+    move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg');
+    if ($_POST["selfxpress"]) {
+	annotateImage("webcam.jpg", black, white);
 	
 }
 
