@@ -38,7 +38,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 
 
 if ($_POST["selfxpress"]) {
-	annotateImage($timestamp."tmp.jpg", black, white);
+	annotateImage("$timestamp.tmp.jpg", black, white);
 	
 }
 
