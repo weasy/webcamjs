@@ -8,7 +8,6 @@
 
 function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick = new \Imagick(realpath($imagePath));
-	$timestamp = date('D:H:i');
 	//move_uploaded_file($_FILES['webcam']['tmp_name'], $timestamp."tmp.jpg");
 	// old variable $webcam = $_FILES['webcam']['tmp_name'];
 	
@@ -24,11 +23,11 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
 	$draw->setgravity(imagick::GRAVITY_SOUTH);
 	$imagick->annotateimage($draw, 0, 0, 0, $text);
-
 	header("Content-Type: image/jpg");
 	echo $imagick->getImageBlob();
 	//setting saved file type here. Use date(); to save file with timestamp.jpg
 	$imagick->setimageformat("jpeg");
+	$timestamp = date('D:H:i');
 	
 	$imagick->writeImage ($timestamp.".jpg");
 	
