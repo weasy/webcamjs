@@ -1,8 +1,17 @@
 <?php 
+//passing this into a html script elsewhere into this script
+//<form action="form-annotate.php" method="post">
+//<input type="text" name="selfxpress"><br>
+//<input type="submit">
+//</form>
+
 
 function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick = new \Imagick(realpath($imagePath));
-
+	$timestamp = date('D:H:i:s');
+	move_uploaded_file($_FILES['webcam']['tmp_name'], $timestamp.".jpg");
+	// old variable $webcam = $_FILES['webcam']['tmp_name'];
+	
 	$draw = new \ImagickDraw();
 	$draw->setStrokeColor($strokeColor);
 	$draw->setFillColor($fillColor);
@@ -20,17 +29,25 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	echo $imagick->getImageBlob();
 	//setting saved file type here. Use date(); to save file with timestamp.jpg
 	$imagick->setimageformat("jpeg");
-	$timestamp = date('D:H:i:s');
+	
 	$imagick->writeImage ($timestamp.".jpg");
 	
 }
 
-//annotateImage("rose.jpg", black, white)
-$webcam = $_FILES['webcam']['tmp_name']
+//annotateImage("rose.jpg", black, white)  // old way of calling line.
+
+
 if ($_POST["selfxpress"]) {
-	annotateImage($webcam, black, white);
+	annotateImage("rose.jpg", black, white)
 	
 }
+
+
+
+//if ($_POST["meme"]) {
+//	annotateImage("rose.jpg", black, white)
+//
+//}
 
 //
 //if ($_POST["selfxpress"]) {
