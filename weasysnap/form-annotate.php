@@ -10,7 +10,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$draw->setStrokeWidth(1);
 	$draw->setFontSize(36);
 	 
-	$text = $_POST["meme"];
+	$text = $_POST["selfxpress"];
 
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
 	$draw->setgravity(imagick::GRAVITY_SOUTH);
@@ -18,12 +18,23 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 
 	header("Content-Type: image/jpg");
 	echo $imagick->getImageBlob();
+	//setting saved file type here. Use date(); to save file with timestamp.jpg
+	$imagick->setimageformat("jpeg");
+	$timestamp = date('D:H:i:s');
+	$imagick->writeImage ($timestamp.".jpg");
+	
 }
 
 //annotateImage("rose.jpg", black, white)
-
-if ($_POST["meme"]) {
-	annotateImage("rose.jpg", black, white);
+$webcam = $_FILES['webcam']['tmp_name']
+if ($_POST["selfxpress"]) {
+	annotateImage($webcam, black, white);
 	
 }
+
+//
+//if ($_POST["selfxpress"]) {
+//	annotateImage("rose.jpg", black, white);
+
+//}
 ?>
