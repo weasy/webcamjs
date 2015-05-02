@@ -21,7 +21,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	//setting saved file type here
 	$imagick->setimageformat("jpeg");
 	//unlink($your_file);
-	$imagick->imageWriteFile (fopen ("test_2.jpg", "wb"));
+	$imagick->writeImage ("test_0.jpg");
 }
 //outside of function I have to save the image file
 annotateImage("rose.jpg", black, white);
