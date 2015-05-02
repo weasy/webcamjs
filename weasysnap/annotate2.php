@@ -9,7 +9,7 @@
 function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick = new \Imagick(realpath($imagePath));
 	$timestamp = date('D:H:i');
-	move_uploaded_file($_FILES['webcam']['tmp_name'], $timestamp."tmp.jpg");
+	//move_uploaded_file($_FILES['webcam']['tmp_name'], $timestamp."tmp.jpg");
 	// old variable $webcam = $_FILES['webcam']['tmp_name'];
 	
 	$draw = new \ImagickDraw();
@@ -36,9 +36,9 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 
 //annotateImage("rose.jpg", black, white)  // old way of calling line.
 
-
+ $webcam = $_FILES['webcam']['tmp_name'];
 if ($_POST["selfxpress"]) {
-	annotateImage("$timestamp.tmp.jpg", black, white);
+	annotateImage(tmp_name, black, white);
 	
 }
 

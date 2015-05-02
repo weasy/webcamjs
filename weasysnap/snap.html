@@ -56,6 +56,21 @@
 			} );
 		}
 	</script>
+	
+	<script language="JavaScript">
+		 Webcam.snap( function(data_uri) {
+		        // snap complete, image data is in 'data_uri'
+
+		       Webcam.upload( data_uri, 'annotate2.php', function(code, text) {
+		            // Upload complete!
+		            // 'code' will be the HTTP response code from the server, e.g. 200
+		            // 'text' will be the raw response content
+		       } );
+
+		   } );
+	</script>
+	
+	
 	<form action="annotate2.php" method="post">
 		<input type="text" name="selfxpress"><br>
 		Click this second<input type="submit">
