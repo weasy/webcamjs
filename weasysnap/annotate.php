@@ -18,8 +18,12 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 
 	header("Content-Type: image/jpg");
 	echo $imagick->getImageBlob();
+	//setting saved file type here
+	$imagick->setimageformat("jpeg");
+	//unlink($your_file);
 }
-
-annotateImage("rose.jpg", black, white)
+//outside of function I have to save the image file
+file_put_contents ("test_1.jpg", $imagick);
+annotateImage("rose.jpg", black, white);
 
 ?>
