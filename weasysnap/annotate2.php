@@ -5,6 +5,8 @@
 //<input type="submit">
 //</form>
 
+move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg') || die;
+
 
 function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick = new \Imagick(realpath($imagePath));
@@ -34,8 +36,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 }
 
 //annotateImage("rose.jpg", black, white)  // old way of calling line.
-
-    move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg');
+//    move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg');
     if ($_POST["selfxpress"]) {
 	annotateImage("webcam.jpg", black, white);
 	echo $_POST["selfxpress"];
