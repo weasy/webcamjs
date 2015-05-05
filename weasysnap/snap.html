@@ -39,12 +39,17 @@
 		<input type=button value="Take Snapshot" onClick="take_snapshot()">
 	</form>
 	<!-- Submit text for SelfXpress -->
-<!-- This is for form-annotate.php script not currently being used 
- <form action="form-annotate.php" method="post">
-<input type="text" name="selfxpress"><br>
-<input type="submit">
-</form>	  -->
 
+	<form>
+		<input type=button value="upload" onClick="Webcam.upload()">
+	</form>
+	
+	 <form action="annotate2.php" method="post">
+		<input type="text" name="selfxpress"><br>
+		Click this second<input type="submit">
+	</form>  
+	
+	
 	<!-- Code to handle taking the snapshot and displaying it locally -->
 	<script language="JavaScript">
 		function take_snapshot() {
@@ -70,16 +75,6 @@
 
 		   } );
 	</script>
-	
-		<form>
-		<input type=button value="upload" onClick="Webcam.upload()">
-	</form>
-	
-	 <form action="annotate2.php" method="post">
-		<input type="text" name="selfxpress"><br>
-		Click this second<input type="submit">
-	</form>  
-	 <?php include 'form-annotate.php';?> 
 	
 </body>
 </html>
