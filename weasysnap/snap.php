@@ -36,6 +36,11 @@
 	
 	
 	<!--  putting script in now! -->
+	
+	<form>
+    <input type=button value="Take Snapshot" onClick="take_snapshot()">
+</form>
+
 	<script language="JavaScript">
 function take_snapshot() {
    Webcam.snap( function(data_uri) {
