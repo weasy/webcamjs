@@ -49,11 +49,11 @@ function take_snapshot() {
                 // Upload complete!
                 // 'code' will be the HTTP response code from the server, e.g. 200
                 // 'text' will be the raw response content
-               // alert( "Upload complete: " + code + ": " + text );
-				document.getElementById('results').innerHTML = 
-					'<h2>Here is your image:</h2>' + 
-					'<img src="'+data_uri+'"/>';              
+               // alert( "Upload complete: " + code + ": " + text );     
            } );
+           document.getElementById('results').innerHTML = 
+				'<h2>Here is your image:</h2>' + 
+				'<img src="'+data_uri+'"/>';         
        } );
 }
 </script>
