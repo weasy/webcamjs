@@ -55,12 +55,12 @@ function take_snapshot() {
 }
 </script>
 	
-<?php
-move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg') || die;
-
-echo "success";
-
-?>
+	
+	<form action="annotate2.php" method="post">
+<input type="text" name="selfxpress"><br>
+<input type="submit">
+</form>
+	
 
 </body>
 </html>
