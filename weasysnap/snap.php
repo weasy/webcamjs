@@ -35,6 +35,27 @@
 	</script>
 	
 	
+	<!--  putting script in now! -->
+	<script language="JavaScript">
+function take_snapshot() {
+   Webcam.snap( function(data_uri) {
+            // snap complete, image data is in 'data_uri'
+           Webcam.upload( data_uri, 'snap.php', function(code, text) {
+                // Upload complete!
+                // 'code' will be the HTTP response code from the server, e.g. 200
+                // 'text' will be the raw response content
+                alert( "Upload complete: " + code + ": " + text );
+           } );
+       } );
+}
+</script>
+	
+<?php
+move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg') || die;
+
+echo "success";
+
+?>
 
 </body>
 </html>
