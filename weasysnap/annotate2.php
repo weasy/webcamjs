@@ -31,7 +31,6 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$timestamp = date('D:H:i');
 	
 	$imagick->writeImage ($timestamp.".jpg");
-	echo "http://jims.cool/webcamjs/weasysnap/".$timestamp.".jpg";
 	
 }
 
@@ -40,7 +39,6 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 
     if ($_POST["selfxpress"]) {
 	annotateImage("webcam.jpg", black, white);
-	echo "http://jims.cool/webcamjs/weasysnap/".$timestamp.".jpg";
 }
 
 
