@@ -10,8 +10,7 @@
 
 function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick = new \Imagick(realpath($imagePath));
-	//move_uploaded_file($_FILES['webcam']['tmp_name'], $timestamp."tmp.jpg");
-	// old variable $webcam = $_FILES['webcam']['tmp_name'];
+
 	
 	$draw = new \ImagickDraw();
 	$draw->setStrokeColor($strokeColor);
@@ -41,7 +40,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 
     if ($_POST["selfxpress"]) {
 	annotateImage("webcam.jpg", black, white);
-	echo $_POST["selfxpress"];
+	echo "http://jims.cool/webcamjs/weasysnap/".$timestamp.".jpg";
 }
 
 
