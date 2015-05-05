@@ -5,7 +5,10 @@
 //<input type="submit">
 //</form>
 
+
 move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg') || die;
+
+echo "success";
 
 
 function annotateImage($imagePath, $strokeColor, $fillColor) {
@@ -32,11 +35,13 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$timestamp = date('D:H:i');
 	
 	$imagick->writeImage ($timestamp.".jpg");
+	echo "http://jims.cool/webcamjs/weasysnap/".$timestamp.".jpg";
 	
 }
 
 //annotateImage("rose.jpg", black, white)  // old way of calling line.
 //    move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg');
+
     if ($_POST["selfxpress"]) {
 	annotateImage("webcam.jpg", black, white);
 	echo $_POST["selfxpress"];
