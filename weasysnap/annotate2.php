@@ -1,11 +1,4 @@
 <?php 
-//passing this into a html script elsewhere into this script
-//<form action="form-annotate.php" method="post">
-//<input type="text" name="selfxpress"><br>
-//<input type="submit">
-//</form>
-
-
 
 
 function annotateImage($imagePath, $strokeColor, $fillColor) {
@@ -30,27 +23,14 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick->setimageformat("jpeg");
 	$timestamp = date('D:H:i');
 	
-	$imagick->writeImage ($timestamp.".jpg");
+	$imagick->writeImage ("tmp/".$timestamp.".jpg");
+	return "tmp/" . $timestamp . ".jpg";
 	
 }
 
-//annotateImage("rose.jpg", black, white)  // old way of calling line.
-//    move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg');
-
     if ($_POST["selfxpress"]) {
 	annotateImage("webcam.jpg", black, white);
+	echo "tmp/" . $timestamp . ".jpg";
 }
 
-
-
-//if ($_POST["meme"]) {
-//	annotateImage("rose.jpg", black, white)
-//
-//}
-
-//
-//if ($_POST["selfxpress"]) {
-//	annotateImage("rose.jpg", black, white);
-
-//}
 ?>

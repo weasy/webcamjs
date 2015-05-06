@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>WebcamJS Test Page</title>
+	<title>Selfxpress</title>
 	<style type="text/css">
 		body { font-family: Helvetica, sans-serif; }
 		h2, h3 { margin-top:0; }
@@ -13,10 +13,10 @@
 	</style>
 </head>
 <body>
-	<div id="results">Your captured image will appear here...</div>
+	<div id="results">Preview your image here:</div>
 	
-	<h1>WebcamJS Test Page</h1>
-	<h3>Demonstrates simple 320x240 capture &amp; display</h3>
+	<h1>Selfxpress, meme your face!</h1>
+	<h3>Take a photo, then type out your meme on your face!</h3>
 	
 	<div id="my_camera"></div>
 	
@@ -59,7 +59,7 @@ function take_snapshot() {
 </script>
 	
 	
-	<form action="annotate2.php" method="post">
+	Meme Text: <form action="annotate2.php" method="post">
 <input type="text" name="selfxpress"><br>
 <input type="submit">
 </form>
