@@ -1,5 +1,4 @@
 <?php 
-echo "test";
 
 function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick = new \Imagick(realpath($imagePath));
