@@ -63,7 +63,11 @@ function take_snapshot() {
 <input type="text" name="selfxpress"><br>
 <input type="submit">
 </form>
-	
+
+<P> Instructions: </br>
+1: Take Photo </br>
+2: retake photo or submit text for your meme.</br>
+3: Hit submit, then right click image and copy image location paste to your friends </P>br>
 	<?php
 move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg'); // || die;
 //echo "success";
