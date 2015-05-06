@@ -22,15 +22,21 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	//setting saved file type here. Use date(); to save file with timestamp.jpg
 	$imagick->setimageformat("jpeg");
 	$timestamp = date('D:H:i');
-	
-	$imagick->writeImage ("tmp/".$timestamp.".jpg");
-	return "tmp/" . $timestamp . ".jpg";
+	$fileToWrite = "tmp/".$timestamp.".jpg";
+	$imagick->writeImage ($fileToWrite);
+	return $fileToWrite;
+	//$imagick->writeImage ("tmp/".$timestamp.".jpg");
 	
 }
 
-    if ($_POST["selfxpress"]) {
-	annotateImage("webcam.jpg", black, white);
-	echo "tmp/" . $timestamp . ".jpg";
+    //if ($_POST["selfxpress"]) {
+	//annotateImage("webcam.jpg", black, white);
+	//echo "tmp/" . $timestamp . ".jpg";
+//}
+
+if ($_POST["selfxpress"]) {
+	$imageLocation = annotateImage("webcam.jpg", black, white);
+	echo '<img src="' . $imageLocation . '" />';
 }
 
 ?>
