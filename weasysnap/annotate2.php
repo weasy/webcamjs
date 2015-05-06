@@ -1,5 +1,5 @@
 <?php 
-
+echo "test";
 
 function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick = new \Imagick(realpath($imagePath));
@@ -37,7 +37,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 if ($_POST["selfxpress"]) {
 	$imageLocation = annotateImage("webcam.jpg", black, white);
 	echo '<img src="' . $imageLocation . '" />';
-	echo "test!!!";
 }
+echo "test!!!";
 
 ?>
