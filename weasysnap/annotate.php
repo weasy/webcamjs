@@ -29,10 +29,12 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	//annotateImage("webcam.jpg", black, white);
 	//echo "tmp/" . $timestamp . ".jpg";
 //}
-if ($_POST["selfxpress"]) {
+if ($_POST["selfxpressify"]) {
+	echo '<a href="http://jims.cool/webcamjs/weasysnap/" target="_blank">Do another Selfxpressify';
 	echo '<H1>Results:</H1> </br></br>';
 	$imageLocation = annotateImage("webcam.jpg", black, white);
 	echo '<center><img src="' . $imageLocation . '" /></center>';
 	echo '<center><p><a href="http://jims.cool/webcamjs/weasysnap/'. $imageLocation . '" target="_blank"> Copy your Selfxpress selfie and paste to your chat!</a></p></center>';
+	
 }
 ?>

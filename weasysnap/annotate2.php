@@ -25,7 +25,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	return $fileToWrite;
 	
 }
-    //if ($_POST["selfxpress"]) {
+    //if ($_POST["selfxpressify"]) {
 	//annotateImage("webcam.jpg", black, white);
 	//echo "tmp/" . $timestamp . ".jpg";
 //}
