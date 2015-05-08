@@ -12,6 +12,8 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
 	$draw->setgravity(imagick::GRAVITY_SOUTH);
 	$imagick->annotateimage($draw, 0, 0, 0, $text);
+	
+	//old manner of pulling up the image to show it, now I do echo imagelocation.
 	//header("Content-Type: image/jpg");
 	//echo $imagick->getImageBlob();
 	
@@ -21,7 +23,6 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$timestamp = date('D:H:i');	$fileToWrite = "tmp/".$timestamp.".jpg";
 	$imagick->writeImage ($fileToWrite);
 	return $fileToWrite;
-	//$imagick->writeImage ("tmp/".$timestamp.".jpg");
 	
 }
     //if ($_POST["selfxpress"]) {
@@ -29,8 +30,11 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	//echo "tmp/" . $timestamp . ".jpg";
 //}
 if ($_POST["selfxpress"]) {
+	echo '<H1>Results:</H1> </br></br>';
 	$imageLocation = annotateImage("webcam.jpg", black, white);
-	echo '<img src="' . $imageLocation . '" />';
+	echo '<center><img src="' . $imageLocation . '" /></center>';
+	echo 'http://jims.cool/webcamjs/weasysnap/' . $imageLocation; 
+
 }
-echo "test!!!";
+
 ?>
