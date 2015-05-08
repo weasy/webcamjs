@@ -32,8 +32,6 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 if ($_POST["selfxpress"]) {
 	echo '<H1>Results:</H1> </br></br>';
 	$imageLocation = annotateImage("webcam.jpg", black, white);
-	echo '<center><img src="' . $imageLocation . '" /></center>';
-	echo "<p><a href=\"http://jims.cool/webcamjs/weasysnap/ target=\"_blank\">' . $imageLocation '</a></p>';		
 }
 
 ?>
