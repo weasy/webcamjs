@@ -33,7 +33,7 @@ if ($_POST["selfxpress"]) {
 	echo '<H1>Results:</H1> </br></br>';
 	$imageLocation = annotateImage("webcam.jpg", black, white);
 	echo '<center><img src="' . $imageLocation . '" /></center>';
-	echo '<center><base href="http://jims.cool/webcamjs/weasysnap/' . $imageLocation.'" target=_"_blank" > </center>'; 
+	echo 'http://jims.cool/webcamjs/weasysnap/' . $imageLocation; 
 
 }
 
