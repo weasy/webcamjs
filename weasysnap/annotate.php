@@ -12,15 +12,17 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
 	$draw->setgravity(imagick::GRAVITY_SOUTH);
 	$imagick->annotateimage($draw, 0, 0, 0, $text);
-	header("Content-Type: image/jpg");
+	
+	//old manner of pulling up the image to show it, now I do echo imagelocation.
+	//header("Content-Type: image/jpg");
 	//echo $imagick->getImageBlob();
+	
 	//setting saved file type here. Use date(); to save file with timestamp.jpg
 	$imagick->setimageformat("jpeg");
-	$timestamp = date('D:H:i');
-	$fileToWrite = "tmp/".$timestamp.".jpg";
+    date_default_timezone_set('Europe/London');
+	$timestamp = date('D:H:i');	$fileToWrite = "tmp/".$timestamp.".jpg";
 	$imagick->writeImage ($fileToWrite);
 	return $fileToWrite;
-	//$imagick->writeImage ("tmp/".$timestamp.".jpg");
 	
 }
     //if ($_POST["selfxpress"]) {
@@ -28,8 +30,9 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	//echo "tmp/" . $timestamp . ".jpg";
 //}
 if ($_POST["selfxpress"]) {
+	echo '<H1>Results:</H1> </br></br>';
 	$imageLocation = annotateImage("webcam.jpg", black, white);
-	echo '<img src="' . $imageLocation . '" />';
+	echo '<center><img src="' . $imageLocation . '" /></center>';
+	echo '<center><p><a href="http://jims.cool/webcamjs/weasysnap/'. $imageLocation . '" target="_blank"> Copy your Selfxpress selfie and paste to your chat!</a></p></center>';
 }
-echo "test!!!";
 ?>

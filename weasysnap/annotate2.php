@@ -33,6 +33,6 @@ if ($_POST["selfxpress"]) {
 	echo '<H1>Results:</H1> </br></br>';
 	$imageLocation = annotateImage("webcam.jpg", black, white);
 	echo '<center><img src="' . $imageLocation . '" /></center>';
-	echo '<p><a href="http://jims.cool/webcamjs/weasysnap/'. $imageLocation . '" target="_blank">Image link here.</a></p>';
+	echo '<center><p><a href="http://jims.cool/webcamjs/weasysnap/'. $imageLocation . '" target="_blank"> Copy your Selfxpress selfie and paste to your chat!</a></p></center>';
 }
 ?>
