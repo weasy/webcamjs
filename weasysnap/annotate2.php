@@ -13,7 +13,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$draw->setgravity(imagick::GRAVITY_SOUTH);
 	$imagick->annotateimage($draw, 0, 0, 0, $text);
 	header("Content-Type: image/jpg");
-	//echo $imagick->getImageBlob();
+	echo $imagick->getImageBlob();
 	//setting saved file type here. Use date(); to save file with timestamp.jpg
 	$imagick->setimageformat("jpeg");
     date_default_timezone_set('Europe/London');
