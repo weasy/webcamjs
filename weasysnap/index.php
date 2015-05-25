@@ -45,7 +45,7 @@
 function take_snapshot() {
    Webcam.snap( function(data_uri) {
             // snap complete, image data is in 'data_uri'
-           Webcam.upload( data_uri, 'snap.php', function(code, text) {
+           Webcam.upload( data_uri, 'index.php', function(code, text) {
                 // Upload complete!
                 // 'code' will be the HTTP response code from the server, e.g. 200
                 // 'text' will be the raw response content
