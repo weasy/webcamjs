@@ -8,7 +8,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$draw->setStrokeWidth(1);
 	$draw->setFontSize(36);
 	 
-	$text = $_POST["selfxpress"];
+	$text = $_POST["selfxpressify"];
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
 	$draw->setgravity(imagick::GRAVITY_SOUTH);
 	$imagick->annotateimage($draw, 0, 0, 0, $text);
