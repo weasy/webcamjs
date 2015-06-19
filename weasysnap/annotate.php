@@ -1,4 +1,11 @@
 <?php 
+
+
+
+require_once 'vendor/autoload.php';
+Airbrake\EventHandler::start('ce9d260564ecf3f5883a49ca9d94258d');
+
+
 function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick = new \Imagick(realpath($imagePath));
 	
