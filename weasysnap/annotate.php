@@ -1,11 +1,4 @@
 <?php 
-
-
-
-require_once 'vendor/autoload.php';
-Airbrake\EventHandler::start('ce9d260564ecf3f5883a49ca9d94258d');
-
-
 function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$imagick = new \Imagick(realpath($imagePath));
 	
@@ -42,6 +35,6 @@ if ($_POST["selfxpressify"]) {
 	$imageLocation = annotateImage("webcam.jpg", black, white);
 	echo '<center><img src="' . $imageLocation . '" /></center>';
 	echo '<center><p><a href="http://jims.cool/webcamjs/weasysnap/'. $imageLocation . '" target="_blank"> Copy your Selfxpress selfie and paste to your chat!</a></p></center>';
-	//test
+	
 }
 ?>
