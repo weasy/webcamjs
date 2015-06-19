@@ -6,7 +6,7 @@ function annotateImage($imagePath, $strokeColor, $fillColor) {
 	$draw->setStrokeColor($strokeColor);
 	$draw->setFillColor($fillColor);
 	$draw->setStrokeWidth(1);
-	$draw->setFontSize(25);
+	$draw->setFontSize(36);
 	 
 	$text = $_POST["selfxpress"];
 	$draw->setFont("/usr/share/fonts/msttcorefonts/impact.ttf");
