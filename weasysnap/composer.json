@@ -1,0 +1,5 @@
+{ 
+  "require": {
+    "dbtlr/php-airbrake": "dev-master"
+  }
+}
