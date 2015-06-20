@@ -65,8 +65,8 @@ function take_snapshot() {
 </form>
 	
 	<?php
-	require_once 'vendor/autoload.php';
-	Airbrake\EventHandler::start('ce9d260564ecf3f5883a49ca9d94258d');
+//	require_once 'vendor/autoload.php';
+//	Airbrake\EventHandler::start('ce9d260564ecf3f5883a49ca9d94258d');
 	
 	
 move_uploaded_file($_FILES['webcam']['tmp_name'], 'webcam.jpg') //|| die;
