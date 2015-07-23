@@ -35,7 +35,7 @@
 	</script>
 	
 	
-	<!--  putting script in now! -->
+	<!--  putting script in now!. -->
 	
 	<form>
     <input type=button value="Take Snapshot" onClick="take_snapshot()">
