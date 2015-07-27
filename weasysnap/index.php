@@ -59,7 +59,7 @@ function take_snapshot() {
 </script>
 	
 	
-	Meme Text: <form method="post" action="<?php echo htmlspecialchars($_SERVER["annotate.php"]);?>">
+	Meme Text: <form method="post" action="annotate.php">
 <input type="text" name="selfxpressify"><br>
 <input type="submit">
 </form>
